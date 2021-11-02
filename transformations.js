@@ -4,11 +4,19 @@ export function sortBySubscriptionDate(input) {
 }
 
 export function sortByFirstName(input) {
-  return input;
+  return input.sort((a, b) => {
+    if (a.firstName < b.firstName) {
+      return -1;
+    }
+    if (a.firstName > b.firstName) {
+      return 1;
+    }
+    return 0;
+  });
 }
 
 export function filterToFirstNameStartingWithB(input) {
-  return input;
+  return input.filter((user) => user['Last Name'].startsWith('S'));
 }
 
 export function filterToCreatedAfter2010(input) {
